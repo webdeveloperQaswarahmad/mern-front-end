@@ -1,0 +1,12 @@
+  .circular-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 20px; /* adjust the width and height as needed */
+    height: 20px;
+    text-align: center;
+    background-color: #ccc; /* set the background color */
+    color: #fff; /* set the text color */
+  }
+  
