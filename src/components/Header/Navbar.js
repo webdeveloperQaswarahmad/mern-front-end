@@ -4,12 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import { useNavigate } from 'react-router-dom';
-import './Navbar'
-
 
 function Header() {
   const auth = localStorage.getItem('user');
   const navigate = useNavigate();
+
   const logout = () => {
     localStorage.clear();
     navigate('/signup');
@@ -19,16 +18,16 @@ function Header() {
     <div>
       <Navbar bg="dark" variant="dark" expand="md">
         <Container>
-
           <>
-                <Image className='rounded-circle'
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNcvQG4MU1s1zn66vnY1H8mHvP1UjRKz9x7Pl9O0&s"
-                  alt=""
-                  rounded
-                  width="40px"
-                  height="40px"
-                />
-                <Navbar.Brand style={{marginLeft:"-140px"}} href="/">Products</Navbar.Brand>
+            <Image
+              className='rounded-circle'
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNcvQG4MU1s1zn66vnY1H8mHvP1UjRKz9x7Pl9O0&s"
+              alt=""
+              rounded
+              width="40px"
+              height="40px"
+            />
+            <Navbar.Brand style={{ marginLeft: "-140px" }} href="/">Products</Navbar.Brand>
             {auth ? (
               <div>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -37,11 +36,14 @@ function Header() {
                     <Nav.Link href="/add" activeClassName="active-link">Add Product</Nav.Link>
                     <Nav.Link href="/update/:id" activeClassName="active-link">Update Product</Nav.Link>
                     <Nav.Link href="/profile" activeClassName="active-link">Profile</Nav.Link>
-                    <Nav.Link className='text-primary ms-4' onClick={logout} href="/signup"
-                       style={{
+                    <Nav.Link
+                      className='text-primary ms-4'
+                      onClick={logout}
+                      href="/signup"
+                      style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        fontSize:'11px',
+                        fontSize: '11px',
                         alignItems: 'center',
                         borderRadius: '50%',
                         width: '50px',
@@ -51,7 +53,7 @@ function Header() {
                         color: '#fff',
                       }}
                     >
-                      Logout {JSON.parse(auth).email.slice(0,6)}
+                      Logout {JSON.parse(auth).name.slice(0, 6)}
                     </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>

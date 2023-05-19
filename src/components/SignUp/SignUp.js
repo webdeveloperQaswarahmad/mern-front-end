@@ -66,6 +66,7 @@ function SignUp() {
             timer: 1500
           });
           localStorage.setItem('user', JSON.stringify({email,name,password}));
+          localStorage.setItem('token', JSON.stringify(response.data.auth));
 
           if (response.status === 200) {
             setName('');
