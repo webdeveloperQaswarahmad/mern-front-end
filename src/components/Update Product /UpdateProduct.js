@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useForm } from 'react-hook-form';
+
 import { useNavigate, useParams } from 'react-router-dom';
 
 function UpdateProduct() {
@@ -13,9 +13,7 @@ function UpdateProduct() {
   const { id } = useParams();
   const navigate = useNavigate()
 
-  useEffect(() => {
-    getProductDetails();
-  }, []);
+  
 
   const getProductDetails = async () => {
     try {
@@ -28,8 +26,11 @@ function UpdateProduct() {
       console.log(error);
     }
   };
+  useEffect(() => {
+    getProductDetails();
+  });
 
- 
+
   const onSubmit = async (event) => {
     event.preventDefault();
     console.log(name, price, category, company);
@@ -40,6 +41,7 @@ function UpdateProduct() {
         category,
         company,
       });
+      console.log(result);
       Swal.fire({
         title: 'Product updated successfully',
         icon: 'success',
@@ -63,7 +65,7 @@ function UpdateProduct() {
       <Row>
         <Col className='mt-4' md={{ span: 6, offset: 3 }}>
           <h4>Update Product</h4>
-          <Form onSubmit={(e)=>{onSubmit(e)}}>
+          <Form onSubmit={(e) => { onSubmit(e) }}>
             <Form.Group controlId='formBasicName'>
               <Form.Label style={{ float: 'left' }}>Name</Form.Label>
               <Form.Control

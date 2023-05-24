@@ -82,7 +82,7 @@ function ProductList() {
             <Table striped bordered>
                 <thead>
                     <tr>
-                        <th>Sr.No</th>
+                        
                         <th>Name</th>
                         <th>Price</th>
                         <th>Category</th>
@@ -93,7 +93,7 @@ function ProductList() {
                 <tbody>
                     {currentProducts.map((product, index) => (
                         <tr key={product._id}>
-                            <td>{index + 1}</td>
+                            
                             <td>{product.name}</td>
                             <td>{product.price}$</td>
                             <td>{product.category}</td>
