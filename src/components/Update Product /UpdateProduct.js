@@ -29,7 +29,7 @@ function UpdateProduct() {
     }
   };
 
- 
+
   const onSubmit = async (event) => {
     event.preventDefault();
     console.log(name, price, category, company);
@@ -63,7 +63,7 @@ function UpdateProduct() {
       <Row>
         <Col className='mt-4' md={{ span: 6, offset: 3 }}>
           <h4>Update Product</h4>
-          <Form onSubmit={(e)=>{onSubmit(e)}}>
+          <Form onSubmit={(e) => { onSubmit(e) }}>
             <Form.Group controlId='formBasicName'>
               <Form.Label style={{ float: 'left' }}>Name</Form.Label>
               <Form.Control
