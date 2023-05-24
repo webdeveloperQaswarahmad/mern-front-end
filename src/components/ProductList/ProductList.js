@@ -22,7 +22,7 @@ function ProductList() {
         };
 
         fetchProducts();
-    }, []);
+    }, [getProductDetails]);
 
     const deleteProduct = async (id) => {
         try {
