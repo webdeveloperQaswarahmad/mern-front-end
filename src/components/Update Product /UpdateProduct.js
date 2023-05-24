@@ -13,7 +13,9 @@ function UpdateProduct() {
   const { id } = useParams();
   const navigate = useNavigate()
 
-  
+   useEffect(() => {
+    getProductDetails();
+  });
 
   const getProductDetails = async () => {
     try {
@@ -26,9 +28,7 @@ function UpdateProduct() {
       console.log(error);
     }
   };
-  useEffect(() => {
-    getProductDetails();
-  });
+ 
 
 
   const onSubmit = async (event) => {
