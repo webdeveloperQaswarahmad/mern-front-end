@@ -19,7 +19,7 @@ const onSubmit = async (data) => {
     userId: userId
   };
   try {
-    const response = await axios.post('http://localhost:5000/add-product', requestData);
+    const response = await axios.post('https://sore-erin-mackerel-sock.cyclic.app/add-product', requestData);
     console.log(response);
     Swal.fire({
       icon: 'success',

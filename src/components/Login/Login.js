@@ -38,7 +38,7 @@ function Login() {
 
     if (email && password) {
       try {
-        const response = await axios.post('http://localhost:5000/login', {
+        const response = await axios.post('https://sore-erin-mackerel-sock.cyclic.app/login', {
           email,
           password,
         });

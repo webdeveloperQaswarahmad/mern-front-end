@@ -8,12 +8,13 @@ function ProductList() {
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [productsPerPage] = useState(5);
+    const [productsPerPage] = useState(8);
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/products');
+                const response = await axios.get('https://sore-erin-mackerel-sock.cyclic.app/products');
+                console.log('productsssssss',response);
                 setProducts(response.data);
             } catch (error) {
                 console.error(error);
@@ -36,7 +37,7 @@ function ProductList() {
             });
 
             if (result.isConfirmed) {
-                await axios.delete(`http://localhost:5000/product/${id}`);
+                await axios.delete(`https://sore-erin-mackerel-sock.cyclic.app/product/${id}`);
                 setProducts(products.filter(product => product._id !== id));
                 Swal.fire({
                     icon: 'success',
@@ -73,9 +74,9 @@ function ProductList() {
 
     return (
         <div>
-            <h4>Product List</h4>
-            <Form.Group className='w-50 mx-auto mt-3 mb-3' controlId="formBasicSearch">
-                <Form.Control type="text" placeholder="Search" value={searchTerm} onChange={handleSearch} />
+            <h4 className='mt-1'>Product List</h4>
+            <Form.Group className='w-25 m-4 float-right mt-2 mb-3 ' controlId="formBasicSearch">
+                <Form.Control type="text" placeholder="Search by name" value={searchTerm} onChange={handleSearch} />
             </Form.Group>
 
             <Table striped bordered>

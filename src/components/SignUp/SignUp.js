@@ -54,7 +54,7 @@ function SignUp() {
 
     if (name && email && password) {
         try {
-          const response = await axios.post('http://localhost:5000/register', {
+          const response = await axios.post('https://sore-erin-mackerel-sock.cyclic.app/register', {
             name,
             email,
             password,

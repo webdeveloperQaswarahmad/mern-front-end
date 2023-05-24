@@ -19,7 +19,7 @@ function UpdateProduct() {
 
   const getProductDetails = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/product/${id}`);
+      const result = await axios.get(`https://sore-erin-mackerel-sock.cyclic.app/product/${id}`);
       setName(result.data.name);
       setPrice(result.data.price);
       setCategory(result.data.category);
@@ -34,7 +34,7 @@ function UpdateProduct() {
     event.preventDefault();
     console.log(name, price, category, company);
     try {
-      const result = await axios.put(`http://localhost:5000/product/${id}`, {
+      const result = await axios.put(`https://sore-erin-mackerel-sock.cyclic.app/product/${id}`, {
         name,
         price,
         category,
